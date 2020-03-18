@@ -1,5 +1,11 @@
 package pl.gda.wsb;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Person {
 
     private String name;
@@ -27,5 +33,13 @@ public class Person {
     @Override
     public String toString() {
         return "Name and surname: " + name + surname + ", date of birth: " + dateOfBirth + '.';
+    }
+
+    void howManyYears(String surname, String dateOfBirth){
+
+        LocalDate birthday = LocalDate.parse(dateOfBirth);
+        LocalDate today = LocalDate.now();
+
+        System.out.println(surname + " is " +  Duration.between(birthday.atStartOfDay(),today.atStartOfDay()).toDays()/365 + "years old.\n");
     }
 }
