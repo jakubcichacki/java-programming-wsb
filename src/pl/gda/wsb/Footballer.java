@@ -5,16 +5,15 @@ public class Footballer extends Person{
     private Position position;
     private int numberOfGoals = 0;
 
-    public Footballer(String name, String surname, String dateOfBirth, String club, Position position, int numberOfGoals) {
+    public Footballer(String name, String surname, String dateOfBirth, String club, Position position) {
         super(name, surname, dateOfBirth);
         this.club = club;
         this.position = position;
-        this.numberOfGoals = numberOfGoals;
     }
 
-    void scoreAGoal(String club, String surname, int numberOfGoals) {
+    void scoreAGoal() {
         numberOfGoals++;
-        System.out.println(club + "(" + surname + ")" + "scores!");
+        System.out.println(club + "(" + getSurname() + ")" + "scores!");
     }
 
     @Override
